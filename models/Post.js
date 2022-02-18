@@ -32,17 +32,6 @@ Post.init(
         key: "id",
       },
     },
-    group_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "group",
-        key: "id",
-      },
-    },
-    post_image: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
   },
   {
     sequelize,
