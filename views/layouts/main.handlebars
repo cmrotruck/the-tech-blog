@@ -15,11 +15,22 @@
             <a href="/">Home</a>
           </div>
           <div>
-            <a href="/dashboard">Dashboard</a>
+            {{#if loggedIn}}
+              <a href="/user-dashboard/">Dashboard</a>
+            {{else}}
+              <a href="/dashboard">Dashboard</a>
+            {{/if}}
+
           </div>
-          <div>
-            <a href="/login">login</a>
-          </div>
+          {{#if loggedIn}}
+            <div>
+              <a href="/logout" id="logout">logout</a>
+            </div>
+          {{else}}
+            <div>
+              <a href="/login">login</a>
+            </div>
+          {{/if}}
         </nav>
         <h1>
           <a href="/">Just Tech News</a>
@@ -33,9 +44,10 @@
         Thanks for visiting!
       </footer>
     </div>
-    {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
-    {{/if}}
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+    <script src="/js/script.js"></script>
   </body>
 
 </html>
