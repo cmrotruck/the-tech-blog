@@ -121,7 +121,16 @@ async function submitCommentHandler(event) {
   }
 }
 
+async function addPostHandler(event) {
+  console.log("Add post button clicked");
+  const response = fetch("/add-post", {
+    method: "get",
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
 $("#submitPasswordButton").on("click", loginButtonHandler);
 $("#submitSignUpButton").on("click", signupButtonHandler);
 $("#submitComment").on("click", submitCommentHandler);
 $("#logout").on("click", logOutHandler);
+// $("#addPost").on("click", addPostHandler);

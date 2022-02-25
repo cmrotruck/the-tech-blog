@@ -177,4 +177,13 @@ router.get("/user-dashboard", (req, res) => {
     });
 });
 
+router.get("/add-post", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("login");
+    return;
+  }
+
+  res.render("addPost");
+});
+
 module.exports = router;
