@@ -1,11 +1,125 @@
+:root {
+  --first-color: #231010;
+  --second-color: #d9ead3;
+}
+
+a {
+  text-decoration: none;
+  color: var(--second-color);
+}
+
+body {
+  background-color: var(--second-color);
+}
+
+li {
+  text-decoration: none;
+}
+
+.nav {
+  background-color: var(--first-color);
+  color: var(--second-color);
+  padding-left: 4%;
+}
+
+.navItem {
+  padding: 20px;
+  font-size: 22pt;
+  font-style: bold;
+}
+
+.title {
+  background-color: var(--first-color);
+  height: 100px;
+}
+
+.content {
+  background-color: var(--first-color);
+  margin: 1% 0;
+}
+
+.content .row {
+  padding: 1% 2%;
+}
+
+.post-title {
+  font-weight: bolder;
+  font-size: 18pt;
+}
+
+.post-list {
+  background-color: var(--second-color);
+  padding-right: 5%;
+}
+
+.post-info {
+  color: var(--second-color);
+  text-align: right;
+  vertical-align: center;
+  display: inline-block;
+}
+
+.post-body {
+  background-color: var(--second-color);
+  border: 3px solid var(--first-color);
+  padding: 0 2%;
+}
+
+.title-button {
+  font-size: 28pt;
+  font-weight: bolder;
+  text-decoration: none;
+  margin-left: 5%;
+  background-color: var(--second-color);
+  color: var(--first-color);
+  padding: 3px 20px;
+  box-shadow: 7px 7px #a7a7a7;
+  border-radius: 10px;
+}
+
 .button {
-  font: bold 11px Arial;
+  font-size: 10pt;
   text-decoration: none;
   background-color: #eeeeee;
   color: #333333;
-  padding: 2px 6px 2px 6px;
+  padding: 2px 2px 2px 2px;
   border-top: 1px solid #cccccc;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #cccccc;
+}
+
+.login-header {
+  background-color: none;
+  color: var(--second-color);
+  font-weight: bolder;
+  font-size: 18pt;
+  display: inline;
+  margin: 0;
+}
+
+.login-content {
+  margin-left: 5%;
+}
+
+.login-signup-btn {
+  background-color: var(--first-color);
+  color: var(--second-color);
+  margin: 2% 0 0 0;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 18pt;
+}
+
+.form-group {
+  padding: 1%;
+}
+
+.link {
+  margin: 0.5% 0 2% 0;
+}
+
+.link a {
+  color: blue;
+  font-size: 12pt;
 }

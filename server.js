@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 require("dotenv").config();
 const sess = {
   secret: process.env.SECRET,
-  cookie: {},
+  cookie: { maxAge: 86400000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

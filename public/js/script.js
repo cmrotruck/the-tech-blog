@@ -122,15 +122,60 @@ async function submitCommentHandler(event) {
 }
 
 async function addPostHandler(event) {
-  console.log("Add post button clicked");
-  const response = fetch("/add-post", {
-    method: "get",
+  event.preventDefault();
+  const postTitle = document.querySelector("#post-title").value.trim();
+  const postContent = document.querySelector("#post-content").value.trim();
+
+  const response = await fetch("/api/post/", {
+    method: "post",
+    body: JSON.stringify({
+      postTitle,
+      postContent,
+    }),
     headers: { "Content-Type": "application/json" },
   });
+
+  if (response.ok) {
+    document.location.href = "/user-dashboard";
+  } else {
+    alert(response.statusText);
+  }
+}
+
+async function updatePostHandler(event) {
+  event.preventDefault();
+  console.log("update clicked");
+  const postTitle = document.querySelector("#post-title").value.trim();
+  const postContent = document.querySelector("#post-content").value.trim();
+  const post_id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+
+  const response = await fetch("/api/post/" + post_id, {
+    method: "put",
+    body: JSON.stringify({
+      postTitle,
+      postContent,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    document.location.href = "/user-dashboard";
+  } else {
+    alert(response.statusText);
+  }
+}
+
+async function deletePostHandler(event) {
+  event.preventDefault();
+  console.log("delete clicked");
 }
 
 $("#submitPasswordButton").on("click", loginButtonHandler);
 $("#submitSignUpButton").on("click", signupButtonHandler);
 $("#submitComment").on("click", submitCommentHandler);
 $("#logout").on("click", logOutHandler);
-// $("#addPost").on("click", addPostHandler);
+$("#createButton").on("click", addPostHandler);
+$("#updatePost").on("click", updatePostHandler);
+$("#deletePost").on("click", deletePostHandler);

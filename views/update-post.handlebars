@@ -1,0 +1,21 @@
+{{#if loggedIn}}
+  <form class="comment-form">
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" value="{{post.post_title}}" />
+    </div>
+
+    <div>
+      <label for="post-content">Content</label>
+      <textarea type="text" id="post-content">{{post.post_text}}</textarea>
+    </div>
+
+    <div>
+      <button type="submit" id="updatePost">Update</button>
+    </div>
+
+    <div>
+      <button type="submit" id="deletePost">Delete</button>
+    </div>
+  </form>
+{{/if}}

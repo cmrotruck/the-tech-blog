@@ -8,7 +8,8 @@ router.get("/dashboard", (req, res) => {
     return;
   }
 
-  res.render("login");
+  const isLogin = true;
+  res.render("login-signup", { isLogin: isLogin });
 });
 
 router.get("/login", (req, res) => {
@@ -16,8 +17,17 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
+  const isLogin = true;
+  res.render("login-signup", { isLogin: isLogin });
+});
 
-  res.render("login");
+router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  const isLogin = false;
+  res.render("login-signup", { isLogin: isLogin });
 });
 
 router.get("/", (req, res) => {
@@ -47,7 +57,7 @@ router.get("/", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ["username", "id"],
       },
     ],
   })
@@ -77,6 +87,7 @@ router.get("/posts/:id", (req, res) => {
       "post_text",
       "post_title",
       "created_at",
+      "user_id",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM comment WHERE post.id = comment.post_id)"
@@ -95,7 +106,7 @@ router.get("/posts/:id", (req, res) => {
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ["username", "id"],
       },
     ],
   })
@@ -109,11 +120,19 @@ router.get("/posts/:id", (req, res) => {
       const post = dbPostData.get({ plain: true });
 
       //pass data to template
-      res.render("single-post", {
-        post,
-        loggedIn: req.session.loggedIn,
-      });
-      console.log("single-post should be shown");
+      if (dbPostData.user_id === req.session.user_id) {
+        res.render("update-post", {
+          post,
+          loggedIn: req.session.loggedIn,
+        });
+        console.log("use update post instead");
+      } else {
+        res.render("single-post", {
+          post,
+          loggedIn: req.session.loggedIn,
+        });
+        console.log("single-post should be shown");
+      }
     })
     .catch((err) => {
       console.log(err);
