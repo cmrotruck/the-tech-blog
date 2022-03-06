@@ -14,45 +14,43 @@
   </head>
 
   <body>
-    <div>
-      <header class="row">
-        <nav class="nav">
-          <div class="navItem">
-            <a href="/">Home</a>
-          </div>
-          <div class="navItem col-med-12">
-            {{#if loggedIn}}
-              <a href="/user-dashboard/">Dashboard</a>
-            {{else}}
-              <a href="/dashboard">Dashboard</a>
-            {{/if}}
+    <header class="row col-12">
+      <nav class="nav">
+        <div class="navItem">
+          <a href="/">Home</a>
+        </div>
+        <div class="navItem">
+          {{#if loggedIn}}
+            <a href="/user-dashboard/">Dashboard</a>
+          {{else}}
+            <a href="/dashboard">Dashboard</a>
+          {{/if}}
 
-          </div>
-          <div class="navItem col-med-12">
-            {{#if loggedIn}}
-              <div>
-                <a href="/logout" id="logout">Logout</a>
-              </div>
-            {{else}}
-              <div>
-                <a href="/login">Login</a>
-              </div>
-            {{/if}}
-          </div>
-        </nav>
-        <h1 class="title">
-          <a href="/" class="btn title-button btn-lg" href="#" role="button">The
-            Tech Blog</a>
-        </h1>
+        </div>
+        <div class="navItem">
+          {{#if loggedIn}}
+            <div>
+              <a href="/logout" id="logout">Logout</a>
+            </div>
+          {{else}}
+            <div>
+              <a href="/login">Login</a>
+            </div>
+          {{/if}}
+        </div>
+      </nav>
+      <h1 class="title">
+        <a href="/" class="btn title-button btn-lg" href="#" role="button">The
+          Tech Blog</a>
+      </h1>
 
-      </header>
-      <main>
-        {{{body}}}
-      </main>
-      <footer>
-        Thanks for visiting!
-      </footer>
-    </div>
+    </header>
+    <main class="col-12">
+      {{{body}}}
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
     ></script>

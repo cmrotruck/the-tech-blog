@@ -146,11 +146,14 @@ async function updatePostHandler(event) {
   event.preventDefault();
   console.log("update clicked");
   const postTitle = document.querySelector("#post-title").value.trim();
-  const postContent = document.querySelector("#post-content").value.trim();
+  const postContent = document
+    .querySelector("#post-content")
+    .textContent.trim();
   const post_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
 
+  console.log(postContent);
   const response = await fetch("/api/post/" + post_id, {
     method: "put",
     body: JSON.stringify({

@@ -1,15 +1,21 @@
 {{> full-post post }}
 
-{{#if loggedIn}}
-  <form class="comment-form">
-    <div>
-      <textarea name="comment-body" id="comment-body"></textarea>
-    </div>
+{{> comments post.comments }}
 
-    <div>
-      <button type="submit" id="submitComment">add comment</button>
+{{#if loggedIn}}
+  <form class="comment">
+    <div class="comment-info">
+      <p></p>
+    </div>
+    <div class="comment-body">
+      <div class="form-group">
+        <label for="email-login">Comment</label>
+        <textarea
+          type="email"
+          class="form-control"
+          id="email-login"></textarea>
+      </div>
+      <button class="btn comment-btn col-12" type="submit" id="submitComment">Submit</button>
     </div>
   </form>
 {{/if}}
-
-{{> comments post.comments }}

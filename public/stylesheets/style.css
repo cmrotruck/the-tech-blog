@@ -1,6 +1,7 @@
 :root {
   --first-color: #231010;
   --second-color: #d9ead3;
+  --third-color: #666666;
 }
 
 a {
@@ -9,7 +10,12 @@ a {
 }
 
 body {
+  background-color: var(--first-color);
+}
+
+main {
   background-color: var(--second-color);
+  padding: 3% 0;
 }
 
 li {
@@ -56,13 +62,12 @@ li {
   color: var(--second-color);
   text-align: right;
   vertical-align: center;
-  display: inline-block;
 }
 
 .post-body {
   background-color: var(--second-color);
   border: 3px solid var(--first-color);
-  padding: 0 2%;
+  padding: 2%;
 }
 
 .title-button {
@@ -122,4 +127,55 @@ li {
 .link a {
   color: blue;
   font-size: 12pt;
+}
+
+.single-post {
+  margin: 0 5%;
+}
+
+.comment {
+  background-color: var(--first-color);
+  margin: 2% 10%;
+}
+
+.comment-info {
+  color: var(--second-color);
+  text-align: right;
+  vertical-align: center;
+  margin: 2%;
+  height: 1%;
+}
+
+.comment-body {
+  background-color: var(--second-color);
+  border: 3px solid var(--first-color);
+  padding: 2%;
+}
+
+.comment-btn {
+  background-color: var(--third-color);
+  color: white;
+  margin: 2% 0 0 0;
+  text-align: center;
+  font-size: 12pt;
+}
+
+.edit-title {
+  font-weight: bolder;
+  font-size: 18pt;
+  color: var(--second-color);
+  padding-left: 2%;
+  align-items: center;
+}
+
+.input-area {
+  background-color: white;
+}
+
+.span-input {
+  height: min-content;
+}
+
+.add-post-btn {
+  margin-left: 7%;
 }
