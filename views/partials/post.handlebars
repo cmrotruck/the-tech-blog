@@ -1,0 +1,17 @@
+<div class="item">
+  {{! <i class="large github middle aligned icon"></i> }}
+  <div class="content">
+    <div>
+      <div class="row">
+        <a class="post-title col-8" href="/posts/{{id}}">{{post_title}}</a>
+        <span class="post-info col-4">
+          Post by
+          {{user.username}}
+          on
+          {{format_date created_at}}
+        </span>
+      </div>
+    </div>
+    <p class="post-body text-justify">{{post_text}}</p>
+  </div>
+</div>

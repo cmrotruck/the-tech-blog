@@ -1,0 +1,47 @@
+{{> full-post post }}
+
+{{> comments post.comments }}
+
+{{#if loggedIn}}
+  <form class="comment">
+    <div class="edit-title col-8">
+      <p>Update Post?</p>
+    </div>
+    <div class="comment-body">
+      <div  class="form-group"> 
+        <label for="post-title">Title</label>
+        <input class="col-12" type="text" id="post-title" value="{{post.post_title}}" />
+      </div>
+      <div class="form-group">
+        <label for="post-content">Content</label>
+
+        <div class="input-area col-12">
+        <span 
+          class="form-control span-input col-12" 
+          role="textarea" 
+          id="post-content"
+          contenteditable>
+          {{post.post_text}}
+        </span>
+      </div>
+      </div>
+      <div>
+        <button class="btn comment-btn col-12" type="submit" id="updatePost">Update</button>
+      </div>
+
+      <div>
+        <button  class="btn comment-btn col-12" type="submit" id="deletePost">Delete</button>
+      </div>
+      
+      
+    </div>
+    
+
+    {{!-- <div>
+      <label for="post-content">Content</label>
+      <textarea type="text" id="post-content">{{post.post_text}}</textarea>
+    </div> --}}
+
+    
+  </form>
+{{/if}}

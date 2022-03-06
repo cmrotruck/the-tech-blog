@@ -1,0 +1,13 @@
+<ol class="post-list col-12" style="list-style: none">
+  {{#each posts as |post|}}
+  <li>
+    {{> post post }}
+  </li>
+  {{/each}}
+</ol>
+
+{{#if dashboard}}
+   <div>
+    <a  href="/add-post" class="btn login-signup-btn col-10 add-post-btn">Add Post</a>
+   </div>
+{{/if}}
