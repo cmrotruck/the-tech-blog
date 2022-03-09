@@ -2,6 +2,24 @@
 
 {{> comments post.comments }}
 
+  {{#if loggedIn}}
+  <form class="comment">
+    <div class="comment-info">
+      <p></p>
+    </div>
+    <div class="comment-body">
+      <div class="form-group">
+        <label for="comment-body">Comment</label>
+        <textarea
+          type="email"
+          class="form-control"
+          id="comment-body"></textarea>
+      </div>
+      <button class="btn comment-btn col-12" type="submit" id="submitComment">Submit</button>
+    </div>
+  </form>
+{{/if}}
+
 {{#if loggedIn}}
   <form class="comment">
     <div class="edit-title col-8">
@@ -45,3 +63,5 @@
     
   </form>
 {{/if}}
+
+

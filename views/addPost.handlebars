@@ -1,22 +1,38 @@
-<div>
-  Create New Post
-</div>
-<div>
-  <form class="add=post-form">
-    <div>
+<form class="comment">
+  <div class="edit-title col-8">
+    <p>Create New Post</p>
+  </div>
+  <div class="comment-body">
+    <div class="form-group">
       <label for="post-title">Title</label>
-      <input type="text" id="post-title" />
+      <input
+        class="col-12"
+        type="text"
+        id="post-title"
+        value="{{post.post_title}}"
+      />
     </div>
-    <div>
+    <div class="form-group">
       <label for="post-content">Content</label>
-      <textarea type="text" id="post-content"></textarea>
+
+      <div class="input-area col-12">
+        <span
+          class="form-control span-input col-12"
+          role="textarea"
+          id="post-content"
+          contenteditable
+        >
+          {{post.post_text}}
+        </span>
+      </div>
     </div>
     <div>
-      <button type="submit" id="createButton">Create</button>
+      <button
+        class="btn comment-btn col-12"
+        type="submit"
+        id="createButton"
+      >Create</button>
     </div>
-  </form>
-</div>
 
-<div>
-  <a href="/add-post" class="button">Add Post</a>
-</div>
+  </div>
+</form>

@@ -124,7 +124,9 @@ async function submitCommentHandler(event) {
 async function addPostHandler(event) {
   event.preventDefault();
   const postTitle = document.querySelector("#post-title").value.trim();
-  const postContent = document.querySelector("#post-content").value.trim();
+  const postContent = document
+    .querySelector("#post-content")
+    .textContent.trim();
 
   const response = await fetch("/api/post/", {
     method: "post",
