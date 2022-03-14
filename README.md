@@ -19,7 +19,7 @@ A website that offers a forum for posts and comments
 
 ## Website
 
-https://cmrotruck.github.io/the-tech-blog/
+https://chad-tech-blog.herokuapp.com/
 
 ## Contributions
 
